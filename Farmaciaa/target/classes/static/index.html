@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"></html>
+<head>
+    <title th:text="'Farmacia'">Farmacia</title>
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css}">
+</head>
+<body>
+    <header th:replace="fragments/header :: header"></header>
+    <div class="container mt-5">
+        <h1 th:text="'Bienvenidos a Nuestra Farmacia'">Bienvenidos a Nuestra Farmacia</h1>
+        <p th:text="'Ofrecemos los mejores productos para tu salud.'">Ofrecemos los mejores productos para tu salud.</p>
+        <h2 th:text="'Video sobre un Medicamento'">Video sobre un Medicamento</h2>
+        <iframe width="560" height="315" th:src="@{https://www.youtube.com/embed/tu_video}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>
