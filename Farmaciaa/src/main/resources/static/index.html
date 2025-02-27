@@ -4,15 +4,122 @@
 <head>
     <title th:text="'Farmacia'">Farmacia</title>
     <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css}">
+        <style>
+            body {
+                background-color: #f2f2f2;
+            }
+            .navbar {
+                background-color: #4CAF50;
+            }
+            .navbar-brand, .nav-link {
+                color: white !important;
+            }
+            .jumbotron {
+                background-color: #4CAF50;
+                color: white;
+                padding: 3rem 2rem;
+            }
+            .video-container {
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+                overflow: hidden;
+            }
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .product-section {
+                background-color: #f8f9fa;
+                padding: 3rem 0;
+            }
+            .product-card {
+                background-color: white;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                padding: 1.5rem;
+                text-align: center;
+            }
+            .product-card img {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 1rem;
+            }
+        </style>
 </head>
 <body>
     <header th:replace="fragments/header :: header"></header>
-    <div class="container mt-5">
-        <h1 th:text="'Bienvenidos a Nuestra Farmacia'">Bienvenidos a Nuestra Farmacia</h1>
-        <p th:text="'Ofrecemos los mejores productos para tu salud.'">Ofrecemos los mejores productos para tu salud.</p>
-        <h2 th:text="'Video sobre un Medicamento'">Video sobre un Medicamento</h2>
-        <iframe width="560" height="315" th:src="@{https://www.youtube.com/embed/tu_video}" frameborder="0" allowfullscreen></iframe>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Farmacia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/productos}">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/sugerencias}">Sugerencias</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4" th:text="'Bienvenidos a Nuestra Farmacia'">Bienvenidos a Nuestra Farmacia</h1>
+            <p class="lead" th:text="'Ofrecemos los mejores productos para tu salud.'">Ofrecemos los mejores productos para tu salud.</p>
+        </div>
     </div>
+
+    <div class="container my-5">
+        <h2 class="text-center" th:text="'Video sobre un Medicamento'">Video sobre un Medicamento</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" th:src="@{https://www.youtube.com/watch?v=M6ns8VwrwI0}" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="product-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Nuestros Productos</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/150" alt="Producto 1">
+                            <h3>Producto 1</h3>
+                            <p>Descripción del producto 1.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/150" alt="Producto 2">
+                            <h3>Producto 2</h3>
+                            <p>Descripción del producto 2.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/150" alt="Producto 3">
+                            <h3>Producto 3</h3>
+                            <p>Descripción del producto 3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer th:replace="fragments/footer :: footer"></footer>
+
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
